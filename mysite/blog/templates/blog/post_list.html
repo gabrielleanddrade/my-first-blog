@@ -1,33 +1,12 @@
-<html>
-    <head>
-        <title>
-            myfirstblog
-        </title>
-    </head>
-<body>
-    <h1>my first blog</h1> 
-    <strong><p>Hi there!</p></strong>
-    <p>It works!</p>
-    <a href="https://djangogirls.org" target="_blank">clique aqui!</a>
-    <ol>
-        <li>  
-            <a href="https://djangogirls.org" target="_blank">clique aqui!</a>
-        </li>
-        <li>segundo item</li>
-    </ol>
-  
-        <div>
-            <h1><a href="/">Blog Django Girls</a></h1>
-        </div>
-
-        {% for post in posts %}
+{% extends 'blog/base.html' %}
+{% block content %}
+{% for post in posts %}
             
-            <div>
-                <p>publicado: {{post.published_date}}</p>
-                <h2><a href="">{{post.title}}</a></h2>
-                <p>{{post.text}}</p>
-            </div>
-    
-        {% endfor %}
-</body>
-</html>
+<div>
+    <p>publicado: {{post.published_date}}</p>
+    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+    <p>{{ post.text|linebreaksbr }}</p>
+</div>
+
+{% endfor %}
+{% endblock %}

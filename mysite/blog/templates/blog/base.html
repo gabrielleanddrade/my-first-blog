@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+    <head>
+        <title>
+            myfirstblog
+        </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+  <button type="button" class="btn btn-secondary">Secondary</button>
+    </head>
+    
+<body>
+    <h1>my first blog</h1> 
+    <strong><p>Hi there!</p></strong>
+    <p>It works!</p>
+    <a href="https://djangogirls.org" target="_blank">clique aqui!</a>
+    <ol>
+        <li>  
+            <a href="https://djangogirls.org" target="_blank">clique aqui!</a>
+        </li>
+        <li>segundo item</li>
+    </ol>
+  
+        <div>
+            <h1><a href="/">Blog Django Girls</a></h1>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+</body>
+</html>
